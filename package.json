@@ -1,0 +1,9 @@
+{
+  "name": "rio-plata-demo-bank",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Synthetic banking code samples for the ONES integration demo",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "demo": "node src/demo.js", "test": "node --test" }
+}
