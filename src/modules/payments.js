@@ -6,5 +6,7 @@ export function previewPayment({ amountMinor, currency = 'ARS' }) {
   if (!['ARS', 'USD'].includes(currency)) {
     throw new RangeError('Supported demo currencies are ARS and USD.');
   }
-  return { amountMinor, currency, feeMinor: 0, status: 'preview' };
+  // Round the synthetic 1% fee up to a whole minor unit.
+  const feeMinor = Math.ceil(amountMinor / 100);
+  return { amountMinor, currency, feeMinor, status: 'preview' };
 }
